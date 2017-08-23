@@ -1,0 +1,106 @@
+.empty-space {
+	height: 50px;
+}
+.date_and_price{
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+.thumb-nail img{
+	width: 520px;/* height: 346px;*/
+}
+.thumb-nail{
+	margin-top: 40px;
+}
+.progressbar .progress{
+	margin-bottom: 14px;
+}
+.progressbar{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.button_section button{
+	height: 50px;
+}
+.introduce_mc{
+	background: #EDFAFA; padding-bottom: 30px; padding-top: 30px; margin-bottom: 50px; margin-top: 50px;
+}
+.introduce_mc .profile_img{
+	height: 70px; width: 70px; border: 3px solid gray;
+}
+
+.summary .width-center{
+  /*center-block*/
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+/*	width: 540px; */
+  margin-top: 30px;
+}
+.summary p{
+	font-size: 1.1em;
+	color: gray;	
+}
+.summary h4{
+  font-size : 1.5em;
+
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@media screen and (max-width: 500px) {
+    .summary h4{font-size: 90%;}
+    .summary p{font-size: 90%;}
+    .button_section{font-size: 90%;}
+    .date_and_price, .like_and_visit_count, .date_and_price .form-group, .like_and_visit_count .form-group
+    {margin : 0px; padding :0px;}
+    .progressbar, .button_section{padding-left: 0px; padding-right: 0px; margin-left: 0px; margin-right: 0px;}
+    .progressbar *, .button_section * {margin: 0px; padding: 0px; font-size: 97%;}
+    .button_section button{height:45px;}
+    .like_button{padding-right: 6px;} .share_button{padding-left: 6px;}
+
+}
+@media screen and (max-width: 400px) {
+    .summary h4{font-size: 85%;}
+    .summary p{font-size: 85%;}
+    .button_section{font-size: 85%;}
+    .date_and_price, .like_and_visit_count, .date_and_price .form-group, .like_and_visit_count .form-group
+    {margin : 0px; padding :0px;}
+    .progressbar, .button_section{padding-left: 0px; padding-right: 0px; margin-left: 0px; margin-right: 0px;}
+    .progressbar *, .button_section * {margin: 0px; padding: 0px; font-size: 96%;}
+    .button_section button{height:45px;}
+    .like_button{padding-right: 6px;} .share_button{padding-left: 6px;}
+
+}
+@media screen and (max-width: 300px) {
+    .summary h4{font-size: 75%;}
+    .summary p{font-size: 75%;}
+    .date_and_price, .like_and_visit_count, .date_and_price .form-group, .like_and_visit_count .form-group
+    {margin : 0px; padding :0px;}
+    .progressbar, .button_section{padding-left: 0px; padding-right: 0px; margin-left: 0px; margin-right: 0px;}
+    .progressbar *, .button_section * {margin: 0px; padding: 0px; font-size: 95%;}
+    .button_section button{height:40px;}
+    .like_button{padding-right: 3px;} .share_button{padding-left: 3px;}
+    .cover .title h2{font-size: 15pt;}
+    .cover .title h4{font-size: 10pt;}
+    .introduce_mc h3{font-size:13pt;}
+    .introduce_mc h4, .introduce_mc kbd{font-size: 11pt;}
+    .introduce_mc p{font-size:9pt;}
+    .details h3{font-size:13pt;}
+    .details p{font-size:9pt;}
+}
+.like_button, .share_button, .participate_button{
+	margin-bottom: 6px;
+}
+.hashtag{
+	/* badge */
+	padding: 8px 10px 8px 10px;
+	background-color: RGB(180,180,180);
+}
+#before_participate .modal-body{
+	padding: 40px 40px 40px 40px;
+}
+#before_participate .btn-link, #before_participate .btn-link:LINK{
+	color: gray;
+	text-decoration: none;
+}

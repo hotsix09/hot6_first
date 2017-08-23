@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.hot6.semi.model.LoginDAO" >
+  
+  	<!-- Login -->
+    <select id="login" resultType="UserVO">
+       select user_id, user_pw, user_name from user where user_id = #{user_id} and user_pw = #{user_pw}
+    </select>
+    
+    <!-- Regist -->
+   <insert id="insertUser">
+     insert into user (member_id,user_id,user_pw,user_name,user_phone,user_email,user_addr,user_regist,user_profile,user_del,is_leader,is_admin) 
+	values("AAAA00011012",#{user_id},#{user_pw},#{user_name},#{user_phone},#{user_email},#{user_addr},NOW(),"프로필사진","N","N","N")
+ 
+    </insert>
+    
+    
+  </mapper>

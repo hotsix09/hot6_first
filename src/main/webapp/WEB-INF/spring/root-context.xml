@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<bean id = "dataSource" class = "org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+        <property name="url" value="jdbc:mysql://localhost:3306/semicolon"></property>
+		<property name = "username" value = "root"></property>
+		<property name = "password" value = "1234"></property>
+	</bean>
+	<!-- SqlSessionFactory -->
+	<bean id= "sqlSessionFactory" class = "org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref = "dataSource"></property>
+		<!-- 2-2. src/main/resources/mybatis-config.xml 연동 -->	
+		<property name="configLocation" value = "classpath:/mybatis-config.xml"></property>
+		<!-- 3. src/main/resources/mappers/memberMapper.xml과 연동 -->
+		<property name = "mapperLocations" value = "classpath:mapper/**/*.xml"></property>
+	</bean>
+	
+	<!-- SqlSessionTemplate -->	
+	<bean id="sqlSession" class = "org.mybatis.spring.SqlSessionTemplate" destroy-method = "clearCache">
+	<constructor-arg name = "sqlSessionFactory" ref = "sqlSessionFactory"></constructor-arg>
+	</bean>
+	<!-- Package auto recognize -->		<!-- zerock 상위 객체로 받음 -->
+	<!-- context:component-scan : bean 객체를 하나하나 선언하지 않고 상위 폴더로 자동으로 인식하게 명령 -->
+	<context:component-scan base-package="com.hot6.semi"></context:component-scan>
+		
+</beans>
